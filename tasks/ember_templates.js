@@ -33,7 +33,8 @@ module.exports = function(grunt) {
 
     // iterate files
     this.files.forEach(function(f) {
-      f.src.forEach(function(file) {
+      grunt.file.expand(f.src).forEach(function(file) {
+
         try {
           // Create a context into which we will load both the ember template compiler
           // as well as the template to be compiled. The ember template compiler expects
